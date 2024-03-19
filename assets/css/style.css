@@ -176,6 +176,7 @@ input {
 
 .nav__logo-icon {
   font-size: 1.25rem;
+  color: var(--first-color);
 }
 
 .nav__btns {
@@ -261,6 +262,7 @@ input {
   flex-direction: column;
   padding: 4rem 0 0;
 }
+
 .home__indicator {
   width: 8px;
   height: 8px;
@@ -281,18 +283,23 @@ input {
   right: 45%;
 }
 
-.home__detials-img {
-  position: absolute;
-  bottom: 0;
-  right: 58%;
+.home__details-img {
+  width: 100%;
+  height: 100%;
+  max-width: 170px; /* Maximum width of the card */
+  text-align: right;
+  margin: left; /* Center the card */
 }
 
-.home__details-title,
-.home__details-subtitle {
-  display: block;
-  font-size: var(--small-font-size);
+.home__details-title {
+  font-size: 1em; /* Larger title font size */
+  color: #333; /* Dark grey color for the title text */
+  margin-bottom: 5px; /* Space below the title */
+}
 
-  text-align: right;
+.home__details-subtitle {
+  font-size: 1em; /* Standard subtitle font size */
+  color: #666; /* Medium grey for the subtitle text */
 }
 
 .home__subtitle {
@@ -332,14 +339,14 @@ input {
   opacity: 1;
 }
 
-.swiper-pagination-horizontal.swiper-pagination-bullet.swiper-pagination-bullets{
-  margin: 0 .5rem;
+.swiper-pagination-horizontal.swiper-pagination-bullet.swiper-pagination-bullets {
+  margin: 0 0.5rem;
 }
 
 .swiper-pagination-bullet-active {
   width: 1.5rem;
   height: 5px;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 /*=============== BUTTONS ===============*/
@@ -348,7 +355,6 @@ input {
   background: var(--first-color);
   color: #fff;
   padding: 1rem 1.7rem;
-  border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.4s;
 }
@@ -368,7 +374,7 @@ input {
 .button--flex {
   display: inline-flex;
   align-items: center;
-  column-gap: .25rem;
+  column-gap: 0.25rem;
 }
 
 /*========== DISCOUNT SECTION ==========*/
@@ -395,12 +401,161 @@ input {
   margin-bottom: var(--mb-2);
 }
 
-
 /*========== NEW ARRIVALS SECTION ==========*/
+.new__container {
+  padding-top: 1rem;
+}
+
+.new__img {
+  width: 150px;
+  margin-bottom: var(--mb-1-5);
+  transition: 0.4s;
+}
+
+.new__content {
+  position: relative;
+  background-color: var(--container-color);
+  width: 310px;
+  padding: 2rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.new__tag {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: var(--small-font-size);
+  padding: 0.25rem 0.5rem;
+}
+
+.new__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.new__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.new__prices {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--body-color);
+  padding: 0.35rem;
+}
+
+.new__price {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.new__discount {
+  color: var(--first-color);
+  font-family: var(--small-font-size);
+  text-decoration: line-through;
+  font-weight: var(--font-medium);
+}
+
+.new__button {
+  display: inline-flex;
+  padding: 0.5rem;
+  margin-left: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  right: -3rem;
+}
+
+.new__icon {
+  font-size: 1.25rem;
+}
+
+.new__content:hover .new__img {
+  transform: translateY(-0.5rem);
+}
+
+.new__content:hover .new__button {
+  right: 0;
+}
 
 /*========== STEPS SECTION ==========*/
+.steps__bg {
+  background-color: var(--container-color);
+  padding: 3.5rem 2.5rem;
+}
+
+.steps__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 2rem;
+  padding-top: 1rem;
+}
+
+.steps__card {
+  background-color: var(--body-color);
+  padding: 2.5rem 3rem 2rem 1.5rem;
+}
+
+.steps__card-number {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--container-color);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: var(--mb-1-5);
+  font-size: var(--h2-font-size);
+  transition: 0.4s;
+}
+
+.steps__card-title {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.steps__card-description {
+  font-size: var(--small-font-size);
+}
+
+.steps__card:hover .steps__card-number {
+  transform: translateY(-0.25rem);
+}
 
 /*========== NEWSLETTER SECTION ==========*/
+.newsletter__container {
+  display: grid;
+  grid-template-columns: 0.5fr;
+  justify-content: center;
+}
+
+.newsletter__description {
+  padding: 0 3rem;
+  text-align: center;
+  margin-bottom: var(--mb-1-5);
+}
+
+.newsletter__form {
+  background-color: var(--container-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter__input {
+  width: 70%;
+  padding: 0 0.5rem;
+  color: var(--title-color);
+  background: none;
+  border-radius: 5px;
+}
+
+.newsletter__input::placeholder {
+  color: var(--text-color);
+}
 
 /*=============== SHOP PAGE ===============*/
 
@@ -423,12 +578,120 @@ input {
 /*=============== CONTACT PAGE ===============*/
 
 /*=============== FOOTER ===============*/
+.footer {
+  margin-top: 5rem;
+  background-color: var(--container-color);
+  padding: 2rem 0;
+  font-family: "Arial", sans-serif;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.footer__content {
+  margin-bottom: 1.5rem;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.footer__logo-icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: 0.5rem;
+}
+
+.footer__description {
+  margin: 0.5rem 0 1.5rem;
+  color: #666;
+}
+
+.footer__social-link {
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer__social-link:hover {
+  color: var(--first-color);
+}
+
+.footer__title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: var(--first-color);
+}
+
+.footer__copy {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -30%;
+  background: var(--first-color);
+  display: inline-flex;
+  padding: 0.25rem;
+  z-index: var(--z-tooltip);
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+.scrollup:hover {
+  opacity: 1;
+}
+
+.scrollup__icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
 
 /* Show Scroll Up*/
+.show-scroll {
+  bottom: 3rem;
+}
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scr);
+}
 
 /*=============== LOGIN ===============*/
 .login {
@@ -466,7 +729,6 @@ input {
 .login__content {
   margin-bottom: 20px;
   background-color: var(--container-color);
-  border-radius: 0.5rem;
   padding: 0.75rem 1rem 0.25rem;
 }
 
@@ -496,7 +758,7 @@ input {
 
 /* Show login */
 .show-login {
-  right: 100;
+  right: 0;
 }
 
 /*=============== CART ===============*/
