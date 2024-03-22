@@ -130,6 +130,9 @@ input {
   text-align: center;
 }
 
+.breadcrumb__subtitle span {
+  color: var(--first-color);
+}
 /*=============== LAYOUT ===============*/
 .container {
   max-width: 968px;
@@ -563,8 +566,157 @@ input {
 }
 
 /*=============== SHOP PAGE ===============*/
+.shop__container {
+  grid-template-columns: 1.7fr 3.3fr;
+  column-gap: 1.8rem;
+}
+
+.sidebar {
+  padding: 1.8rem;
+  background-color: var(--container-color);
+}
+
+.filter__title {
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+}
+
+.filter__subtitle {
+  margin: 1.25rem 0 var(--mb-0-5);
+  font-size: var(--normal-font-size);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-0-5);
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+
+.filter p {
+  flex: 1;
+}
+
+.filter input {
+  margin-right: var(--mb-0-75);
+  cursor: pointer;
+}
+
+.shop__items {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.shop__content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 2rem 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.shop__img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: var(--mb-1);
+}
+
+.shop__tag {
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  background-color: var(--first-color);
+  color: #fff;
+  font-size: var(--small-font-size);
+  padding: 0.25rem 0.5rem;
+}
+
+.shop__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.shop__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.shop__prices {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--body-color);
+  padding: 0.35rem;
+}
+
+.shop__price {
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.shop__discounts {
+  color: var(--first-color);
+  font-family: var(--small-font-size);
+  text-decoration: line-through;
+  font-weight: var(--font-medium);
+}
+
+.shop__button {
+  display: inline-flex;
+  padding: 0.5rem;
+  margin-left: 0.2rem;
+  position: absolute;
+  bottom: 0;
+  right: -3rem;
+}
+
+.shop__icon {
+  font-size: 1.25rem;
+}
+
+.shop__content:hover .shop__img {
+  transform: translateY(-0.5rem);
+  transition: 0.4s;
+}
+
+.shop__content:hover .shop__button {
+  right: 0;
+}
 
 /*=============== PAGINATION ===============*/
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 2rem;
+  column-gap: 0.8rem;
+  font-size: var(--normal-font-size);
+}
+
+.pagination span {
+  width: 2.2rem;
+  height: 2.2rem;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination span:hover {
+  background-color: var(--first-color);
+  color: var(--container-color);
+}
+
+.pagination .current {
+  background-color: var(--first-color);
+  color: var(--container-color);
+}
+
+.pagination__icon {
+  font-size: var(--h2-font-size);
+}
 
 /*=============== DETAILS PAGE ===============*/
 
@@ -622,9 +774,11 @@ input {
 .footer__social-link {
   display: inline-block;
   margin-right: 0.5rem;
+  background-color: var(--container-color);
   color: #333;
   transition: color 0.3s ease;
   font-size: 1rem;
+  border-radius: 0.25rem;
   padding: 0.25rem;
 }
 
@@ -991,6 +1145,29 @@ input {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
   }
+
+  .shop__container{
+    grid-template-columns: 1.6fr 3.4fr;
+  }
+
+  .shop__content {
+    padding: 2rem 0 1.5rem 0;
+  }
+
+  .shop__img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .shop__img,
+  .shop__subtitle {
+    margin-bottom: var(--mb-0-5);
+  }
+
+  .shop__title {
+    font-size: var(--normal-font-size);
+  }
+
 }
 
 /* For medium devices */
@@ -1074,6 +1251,16 @@ input {
     row-gap: 2rem;
   }
 
+  .shop__container {
+    grid-template-columns: 520px;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+
+  .pagination{
+    justify-content: center;
+  }
+
   .footer__container {
     grid-template-columns: 1fr;
     row-gap: 2rem;
@@ -1083,6 +1270,9 @@ input {
   .footer__copy {
     margin-top: 4.5rem;
   }
+
+
+
 }
 
 @media screen and (max-width: 576px) {
@@ -1102,6 +1292,29 @@ input {
   .cart {
     width: 100%;
   }
+
+  .shop__container{
+    grid-template-columns: .8fr;
+  }
+
+  .shop__items{
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 1.25rem 1.4rem;
+  }
+
+  .pagination span {
+    height: 1.8rem;
+    width: 1.8rem;
+    line-height: 30px;
+  }
+
+  .pagination{
+    column-gap: .4rem;
+  }
+
 }
 
 /* For small devices */
@@ -1125,13 +1338,20 @@ input {
     row-gap: 1rem;
   }
 
-  .steps__bg{
+  .steps__bg {
     padding: 2rem 1rem;
   }
 
-  .steps__card{
-    padding: 1.5rem
+  .steps__card {
+    padding: 1.5rem;
   }
 
+  .shop__container{
+    grid-template-columns: 1fr;
+  }
+
+  .pagination span {
+    font-size: var(--small-font-size);
+  }
 
 }
